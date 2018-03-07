@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qoF-g7-qkg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Futura.ttc">
+            <string>Futura-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Healthcare Assistant-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Smart_Health_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Healthcare Assistant" id="IDu-Vo-8I9">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="REA-lg-gHQ">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="-8" maxY="0.0"/>
+                            <color key="tintColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="bluetooth" id="Yrr-Ud-2Sj">
+                            <color key="tintColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bluetoothBarButton" destination="Yrr-Ud-2Sj" id="ntM-zl-0RF"/>
+                        <outlet property="menuBarButton" destination="REA-lg-gHQ" id="Kcj-5G-yf7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="131.78410794602701"/>
+        </scene>
+        <!--Scanning...-->
+        <scene sceneID="bbb-b7-3GK">
+            <objects>
+                <viewController id="HuU-ET-UoR" customClass="ScannerViewController" customModule="Smart_Health_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wvg-HW-ni9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gQe-Az-wB1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gQe-Az-wB1" firstAttribute="top" secondItem="u19-RL-DfW" secondAttribute="top" id="Dik-fx-Spi"/>
+                            <constraint firstItem="gQe-Az-wB1" firstAttribute="trailing" secondItem="u19-RL-DfW" secondAttribute="trailing" id="I6f-WG-3pU"/>
+                            <constraint firstItem="gQe-Az-wB1" firstAttribute="bottom" secondItem="u19-RL-DfW" secondAttribute="bottom" id="b6M-3N-Rd0"/>
+                            <constraint firstItem="gQe-Az-wB1" firstAttribute="leading" secondItem="u19-RL-DfW" secondAttribute="leading" id="cYt-OZ-k4b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u19-RL-DfW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Scanning..." id="hML-Cj-FAa">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" image="close" id="rZo-KI-PUN">
+                            <color key="tintColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Try Again" image="reload" id="5qZ-ee-h2T">
+                            <color key="tintColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="closeBarButton" destination="rZo-KI-PUN" id="kcb-gD-e5K"/>
+                        <outlet property="tableView" destination="gQe-Az-wB1" id="oi2-02-CHo"/>
+                        <outlet property="tryAgainBarButton" destination="5qZ-ee-h2T" id="40v-nZ-U6c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nR1-rC-1e5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2149.5999999999999" y="130.88455772113943"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1hE-ed-9ne">
+            <objects>
+                <viewController id="qoF-g7-qkg" customClass="ViewController" customModule="Smart_Health_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bmd-VU-LT6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.cis4sl.lk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UmB-iR-9rO">
+                                <rect key="frame" x="149" y="647.5" width="75.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smart Healthcare Assistant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yg-OJ-Jkn">
+                                <rect key="frame" x="60.5" y="80" width="255.5" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hv3-my-uvB">
+                                <rect key="frame" x="0.0" y="218.5" width="375" height="230"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen" translatesAutoresizingMaskIntoConstraints="NO" id="sPy-ex-gD2">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
+                                        <color key="backgroundColor" red="0.1803921568627451" green="0.30588235294117649" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="230" id="Y99-lA-Olo"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1803921568627451" green="0.30588235294117649" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="sPy-ex-gD2" secondAttribute="bottom" id="CVg-kY-s8E"/>
+                                    <constraint firstItem="sPy-ex-gD2" firstAttribute="leading" secondItem="hv3-my-uvB" secondAttribute="leading" id="HRa-no-NjV"/>
+                                    <constraint firstItem="sPy-ex-gD2" firstAttribute="top" secondItem="hv3-my-uvB" secondAttribute="top" id="JR3-Av-nzF"/>
+                                    <constraint firstAttribute="height" constant="230" id="snN-nH-CSm"/>
+                                    <constraint firstAttribute="trailing" secondItem="sPy-ex-gD2" secondAttribute="trailing" id="ukt-ny-xQJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18132394552230835" green="0.30777269601821899" blue="0.39602559804916382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UmB-iR-9rO" firstAttribute="centerX" secondItem="bmd-VU-LT6" secondAttribute="centerX" id="4tx-ro-hoR"/>
+                            <constraint firstItem="Kmz-tf-5ny" firstAttribute="bottom" secondItem="UmB-iR-9rO" secondAttribute="bottom" constant="5" id="FPa-B7-OZt"/>
+                            <constraint firstItem="Kmz-tf-5ny" firstAttribute="trailing" secondItem="hv3-my-uvB" secondAttribute="trailing" id="KLl-5X-iqU"/>
+                            <constraint firstItem="4yg-OJ-Jkn" firstAttribute="centerX" secondItem="bmd-VU-LT6" secondAttribute="centerX" id="LwV-jk-zbq"/>
+                            <constraint firstItem="4yg-OJ-Jkn" firstAttribute="top" secondItem="Kmz-tf-5ny" secondAttribute="top" constant="60" id="M7I-vS-K97"/>
+                            <constraint firstItem="hv3-my-uvB" firstAttribute="leading" secondItem="Kmz-tf-5ny" secondAttribute="leading" id="eZU-8t-fyd"/>
+                            <constraint firstItem="hv3-my-uvB" firstAttribute="centerY" secondItem="bmd-VU-LT6" secondAttribute="centerY" id="ebO-f1-oT7"/>
+                            <constraint firstItem="hv3-my-uvB" firstAttribute="centerX" secondItem="bmd-VU-LT6" secondAttribute="centerX" id="zvm-3A-nQe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kmz-tf-5ny"/>
+                    </view>
+                    <connections>
+                        <outlet property="launchView" destination="hv3-my-uvB" id="KsM-bp-gad"/>
+                        <segue destination="ktx-Ir-Wjh" kind="show" identifier="initialSegue" id="mHg-hc-LIQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="abb-fw-1gm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1068" y="131.78410794602701"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="cl0-Hv-M0h">
+            <objects>
+                <viewController id="7Rg-Gg-bce" customClass="MenuViewController" customModule="Smart_Health_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UJt-Ev-21g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hY1-v2-oZ8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hY1-v2-oZ8" firstAttribute="top" secondItem="UJt-Ev-21g" secondAttribute="top" id="MDT-WL-biF"/>
+                            <constraint firstItem="hY1-v2-oZ8" firstAttribute="leading" secondItem="lT8-aj-9sM" secondAttribute="leading" id="Oi1-gj-70D"/>
+                            <constraint firstItem="hY1-v2-oZ8" firstAttribute="trailing" secondItem="lT8-aj-9sM" secondAttribute="trailing" id="ZAX-S2-epb"/>
+                            <constraint firstItem="hY1-v2-oZ8" firstAttribute="bottom" secondItem="lT8-aj-9sM" secondAttribute="bottom" id="rOG-el-MO3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lT8-aj-9sM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ofI-6n-3F3"/>
+                    <connections>
+                        <outlet property="tableView" destination="hY1-v2-oZ8" id="TDg-lo-Q5M"/>
+                        <segue destination="j1p-Jg-TQ9" kind="show" identifier="ecgSegue" id="b34-IM-Fal"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZWk-mJ-u8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-282.39999999999998" y="-767.76611694152928"/>
+        </scene>
+        <!--ECG-->
+        <scene sceneID="yLv-Pr-xvL">
+            <objects>
+                <viewController id="CKv-rW-tJH" customClass="ECGViewController" customModule="Smart_Health_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cJG-4s-amQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="9Ow-7V-Vp5"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ECG" id="Qzi-RW-kr9">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="iPb-Df-c10">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="disconnected" id="rFk-q5-TI2">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backBarButton" destination="iPb-Df-c10" id="0sE-Yb-AUk"/>
+                        <outlet property="connectBarButton" destination="rFk-q5-TI2" id="tt5-xS-vEV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w0q-lH-UYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1951" y="-1337"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WXT-Or-gF0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ktx-Ir-Wjh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="gJF-s2-yfC">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1803921568627451" green="0.30588235294117649" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gbz-Ez-MXE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pns-VF-kN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-281" y="132"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gFM-6e-Y9g">
+            <objects>
+                <navigationController storyboardIdentifier="formSheetController" automaticallyAdjustsScrollViewInsets="NO" id="0QK-xm-ayW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="pC6-CU-1JD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1813239455" green="0.30777269600000001" blue="0.39602559799999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HuU-ET-UoR" kind="relationship" relationship="rootViewController" id="0bh-is-e4v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DlQ-HL-01c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1352" y="131.33433283358323"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="ZB4-un-20z">
+            <objects>
+                <navigationController storyboardIdentifier="LeftMenuNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="H4A-Od-0A9" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="hFA-Cf-nsZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7Rg-Gg-bce" kind="relationship" relationship="rootViewController" id="T7E-Yj-eat"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eIL-AK-ZQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1068" y="-766"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gMG-pI-0aM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j1p-Jg-TQ9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="yQq-DY-2j0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14416849609999999" green="0.2454349995" blue="0.31606951360000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CKv-rW-tJH" kind="relationship" relationship="rootViewController" id="llq-a5-hYX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kBK-L7-tAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1152" y="-1336.7316341829087"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="32" height="32"/>
+        <image name="bluetooth" width="26" height="26"/>
+        <image name="close" width="33" height="33"/>
+        <image name="disconnected" width="26" height="26"/>
+        <image name="hamburger" width="32" height="32"/>
+        <image name="launchscreen" width="620" height="420"/>
+        <image name="reload" width="32" height="32"/>
+    </resources>
+</document>
