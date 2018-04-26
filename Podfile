@@ -20,4 +20,7 @@ target 'Smart Health Assistant' do
    pod 'NVActivityIndicatorView'
    pod 'SideMenu'
    pod 'MZFormSheetPresentationController'
+   pod 'SwiftCharts'
+   pod 'LinearProgressBar'
 end
+

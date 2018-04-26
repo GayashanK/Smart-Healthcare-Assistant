@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4E512364E494A8279605482A /* Pods_Smart_Health_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E97FD7476C55BF57E28BD8 /* Pods_Smart_Health_Assistant.framework */; };
+		94352C582054D2A600860534 /* ChartDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94352C572054D2A600860534 /* ChartDefaults.swift */; };
+		94352C5A2054D39600860534 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94352C592054D39600860534 /* Env.swift */; };
 		947231C8204D2D4D00395424 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947231C7204D2D4D00395424 /* AppDelegate.swift */; };
 		947231CA204D2D4D00395424 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947231C9204D2D4D00395424 /* ViewController.swift */; };
 		947231CD204D2D4D00395424 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947231CB204D2D4D00395424 /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 
 /* Begin PBXFileReference section */
 		78E3FB152B3F9CD51EE01CAE /* Pods-Smart Health Assistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Health Assistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Health Assistant/Pods-Smart Health Assistant.debug.xcconfig"; sourceTree = "<group>"; };
+		94352C572054D2A600860534 /* ChartDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDefaults.swift; sourceTree = "<group>"; };
+		94352C592054D39600860534 /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		947231C4204D2D4D00395424 /* Smart Health Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Health Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		947231C7204D2D4D00395424 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		947231C9204D2D4D00395424 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 				94723206204D2E9A00395424 /* UserDefaultsHelper.swift */,
 				9472320C204D2E9A00395424 /* Utils.swift */,
 				94723202204D2E9900395424 /* ValidationHelper.swift */,
+				94352C592054D39600860534 /* Env.swift */,
+				94352C572054D2A600860534 /* ChartDefaults.swift */,
 				947231E6204D2DC900395424 /* Resources */,
 			);
 			path = Helpers;
@@ -414,6 +420,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/KFSwiftImageLoader/KFSwiftImageLoader.framework",
+				"${BUILT_PRODUCTS_DIR}/LinearProgressBar/LinearProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/MZAppearance/MZAppearance.framework",
 				"${BUILT_PRODUCTS_DIR}/MZFormSheetPresentationController/MZFormSheetPresentationController.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
@@ -423,6 +430,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxKeyboard/RxKeyboard.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftCharts/SwiftCharts.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TTGSnackbar/TTGSnackbar.framework",
 			);
@@ -431,6 +439,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KFSwiftImageLoader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinearProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZAppearance.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZFormSheetPresentationController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
@@ -440,6 +449,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxKeyboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCharts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGSnackbar.framework",
 			);
@@ -471,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94DECF14204DAFFA00C1F71D /* ECGViewController.swift in Sources */,
+				94352C5A2054D39600860534 /* Env.swift in Sources */,
 				947231ED204D2E1500395424 /* AOModalStatusView.swift in Sources */,
 				947231CA204D2D4D00395424 /* ViewController.swift in Sources */,
 				947231F2204D2E4B00395424 /* WebServices.swift in Sources */,
@@ -495,6 +506,7 @@
 				9472321D204D30E300395424 /* MBProgressHUD.m in Sources */,
 				9472320F204D2E9B00395424 /* UIImage+Helper.swift in Sources */,
 				94723217204D2E9B00395424 /* UIView+Helper.swift in Sources */,
+				94352C582054D2A600860534 /* ChartDefaults.swift in Sources */,
 				94723214204D2E9B00395424 /* Display.swift in Sources */,
 				9490760C204D623A004CFD66 /* ScannerViewController.swift in Sources */,
 				947231F0204D2E3500395424 /* BaseViewController.swift in Sources */,
