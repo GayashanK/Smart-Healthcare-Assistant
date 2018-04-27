@@ -11,13 +11,15 @@ import RxSwift
 import RxCocoa
 import CoreBluetooth
 import QuartzCore
-import LinearProgressBar
+import SwiftCharts
 
 class ECGViewController: BaseViewController {
 
+    @IBOutlet weak var chartContainerView: UIView!
     @IBOutlet weak var connectBarButton: UIBarButtonItem!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
+    fileprivate var chart: Chart? // arc
     
     let disposeBag = DisposeBag()
     var timer = Timer()
@@ -27,14 +29,14 @@ class ECGViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.statusBarStyle = .default
-        
+        startButton.layer.cornerRadius = 5
         connectBarButton.rx.tap.subscribe({[weak self] _ in self?.connect()}).disposed(by: disposeBag)
         startButton.rx.tap.subscribe({[weak self] _ in self?.startPressed()}).disposed(by: disposeBag)
         
         // init serial
         serial = BluetoothSerial(delegate: self)
         progressBar.progress = 0.0
-        
+        setChart()
     }
     
     func startPressed() {
@@ -85,6 +87,54 @@ class ECGViewController: BaseViewController {
             serial.disconnect()
             reloadView()
         }
+    }
+    
+    func setChart() {
+        let chartPoints: [ChartPoint] = [(0, 0), (4, 4), (6, 6), (8, 8), (8, 10), (15, 15)].map{ChartPoint(x: ChartAxisValueInt($0.0), y: ChartAxisValueInt($0.1))}
+        
+        let labelSettings = ChartLabelSettings(font: ChartDefaults.labelFont)
+        
+        let generator = ChartAxisGeneratorMultiplier(2)
+        let labelsGenerator = ChartAxisLabelsGeneratorFunc {scalar in
+            return ChartAxisLabel(text: "\(scalar)", settings: labelSettings)
+        }
+        
+        let xGenerator = ChartAxisGeneratorMultiplier(2)
+        
+        let xModel = ChartAxisModel(firstModelValue: 0, lastModelValue: 16, axisTitleLabels: [ChartAxisLabel(text: "Axis title", settings: labelSettings)], axisValuesGenerator: xGenerator, labelsGenerator: labelsGenerator)
+        
+        let yModel = ChartAxisModel(firstModelValue: 0, lastModelValue: 16, axisTitleLabels: [ChartAxisLabel(text: "Axis title", settings: labelSettings.defaultVertical())], axisValuesGenerator: generator, labelsGenerator: labelsGenerator)
+        
+        let chartFrame = ChartDefaults.chartFrame(self.chartContainerView.bounds)
+        
+        let chartSettings = ChartDefaults.chartSettingsWithPanZoom
+        
+        // generate axes layers and calculate chart inner frame, based on the axis models
+        let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
+        let (xAxisLayer, yAxisLayer, innerFrame) = (coordsSpace.xAxisLayer, coordsSpace.yAxisLayer, coordsSpace.chartInnerFrame)
+        
+        // create layer with guidelines
+        let guidelinesLayerSettings = ChartGuideLinesDottedLayerSettings(linesColor: UIColor.black, linesWidth: ChartDefaults.guidelinesWidth)
+        let guidelinesLayer = ChartGuideLinesDottedLayer(xAxisLayer: xAxisLayer, yAxisLayer: yAxisLayer, settings: guidelinesLayerSettings)
+        
+        let lineModel = ChartLineModel(chartPoints: chartPoints, lineColor: UIColor.black, lineWidth: 1, animDuration: 45, animDelay: 0)
+        let chartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxisLayer.axis, yAxis: yAxisLayer.axis, lineModels: [lineModel], pathGenerator: CatmullPathGenerator()) // || CubicLinePathGenerator
+        
+        // create chart instance with frame and layers
+        let chart = Chart(
+            frame: chartFrame,
+            innerFrame: innerFrame,
+            settings: chartSettings,
+            layers: [
+                xAxisLayer,
+                yAxisLayer,
+                guidelinesLayer,
+                chartPointsLineLayer
+            ]
+        )
+        
+        chartContainerView.addSubview(chart.view)
+        self.chart = chart
     }
     
 //    func backPressed() {

@@ -7,7 +7,6 @@ PODS:
     - Fabric (~> 1.7.2)
   - Fabric (1.7.2)
   - KFSwiftImageLoader (3.0.0)
-  - LinearProgressBar (1.0.1)
   - MZAppearance (1.1.6)
   - MZFormSheetPresentationController (2.4.3):
     - MZAppearance
@@ -27,6 +26,7 @@ PODS:
     - RxSwift (>= 4.0.0)
   - RxSwift (4.1.2)
   - SideMenu (3.1.5)
+  - SwiftCharts (0.6.1)
   - SwiftyJSON (4.0.0)
   - TTGSnackbar (1.7.1)
 
@@ -36,7 +36,6 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - KFSwiftImageLoader
-  - LinearProgressBar
   - MZFormSheetPresentationController
   - NVActivityIndicatorView
   - RxAlamofire
@@ -44,6 +43,7 @@ DEPENDENCIES:
   - RxKeyboard
   - RxSwift
   - SideMenu
+  - SwiftCharts
   - SwiftyJSON
   - TTGSnackbar
 
@@ -53,7 +53,6 @@ SPEC CHECKSUMS:
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   KFSwiftImageLoader: c4656d614329480308b190c2b6f15015a4018ffc
-  LinearProgressBar: f6a74dbabed229dbb1a7978089e2e4317a3a0ee0
   MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
   MZFormSheetPresentationController: fbfdbad31884f16fac17fbe3c44c168306cc1095
   NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
@@ -63,9 +62,10 @@ SPEC CHECKSUMS:
   RxKeyboard: 28d984440671becc75350b1dfae7ae08d31076df
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
+  SwiftCharts: 77378d6cf667e95f9c79a745b6778e66eed5339c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TTGSnackbar: 26e9c1f842269d0eeae8c51f7d8cbea669d492f1
 
-PODFILE CHECKSUM: 6a51f09c5ac5f10d53d450c42541458d6326fa74
+PODFILE CHECKSUM: b306ffdcc10b65648adfaa510f46f98f516b4b44
 
 COCOAPODS: 1.3.1
