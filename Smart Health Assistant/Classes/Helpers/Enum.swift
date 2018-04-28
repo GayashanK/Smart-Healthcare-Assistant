@@ -43,6 +43,10 @@ enum UserDefaultsKey : String {
     case userLoginType = "key_user_login_type"
 }
 
+enum NotificationKey : String {
+    case reloadAfterConnect = "reloadViewAfterConnectBluetooth"
+}
+
 enum ViewControllerIdentifier : String {
     case viewController = "ViewController"
 }

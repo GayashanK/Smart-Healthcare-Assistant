@@ -35,19 +35,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen" translatesAutoresizingMaskIntoConstraints="NO" id="DJN-OC-j6V">
-                                <rect key="frame" x="0.0" y="218.5" width="375" height="230"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="230" id="Hng-Y1-IAU"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.17744618654251099" green="0.30385065078735352" blue="0.39209070801734924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.56862745100000001" green="0.84705882349999995" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DJN-OC-j6V" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0Ux-cy-PHf"/>
-                            <constraint firstItem="DJN-OC-j6V" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="B3g-Zj-0fs"/>
-                            <constraint firstItem="DJN-OC-j6V" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="JpG-uK-Nld"/>
-                            <constraint firstItem="DJN-OC-j6V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ktk-YX-kAB"/>
                             <constraint firstItem="CSn-LW-uvc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SQr-lf-A19"/>
                             <constraint firstItem="CSn-LW-uvc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="bHB-O0-z5l"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iDp-VC-x4g" secondAttribute="bottom" constant="5" id="ks2-28-xQC"/>
@@ -61,7 +51,4 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="launchscreen" width="620" height="420"/>
-    </resources>
 </document>

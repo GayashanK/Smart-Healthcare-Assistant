@@ -48,7 +48,6 @@
 		94907616204D6AD5004CFD66 /* SideMenuHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94907614204D6AD5004CFD66 /* SideMenuHeaderCell.xib */; };
 		94907619204D7E16004CFD66 /* ScannerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94907617204D7E16004CFD66 /* ScannerTableCell.swift */; };
 		9490761A204D7E16004CFD66 /* ScannerTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94907618204D7E16004CFD66 /* ScannerTableCell.xib */; };
-		94A85C7A2092D304007F5355 /* ChartDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A85C792092D304007F5355 /* ChartDefaults.swift */; };
 		94DECF14204DAFFA00C1F71D /* ECGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DECF13204DAFFA00C1F71D /* ECGViewController.swift */; };
 		94F086AC2091BDBB00F541B7 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F086AB2091BDBB00F541B7 /* TabViewController.swift */; };
 /* End PBXBuildFile section */
@@ -103,7 +102,6 @@
 		94907614204D6AD5004CFD66 /* SideMenuHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuHeaderCell.xib; sourceTree = "<group>"; };
 		94907617204D7E16004CFD66 /* ScannerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerTableCell.swift; sourceTree = "<group>"; };
 		94907618204D7E16004CFD66 /* ScannerTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannerTableCell.xib; sourceTree = "<group>"; };
-		94A85C792092D304007F5355 /* ChartDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDefaults.swift; sourceTree = "<group>"; };
 		94DECF13204DAFFA00C1F71D /* ECGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECGViewController.swift; sourceTree = "<group>"; };
 		94F086AB2091BDBB00F541B7 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		C0CD6F5E240713E65590D64A /* Pods-Smart Health Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Health Assistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Health Assistant/Pods-Smart Health Assistant.release.xcconfig"; sourceTree = "<group>"; };
@@ -257,7 +255,6 @@
 		947231E4204D2DB100395424 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				94A85C792092D304007F5355 /* ChartDefaults.swift */,
 				9472320A204D2E9A00395424 /* Constants.swift */,
 				94723208204D2E9A00395424 /* Display.swift */,
 				94723205204D2E9A00395424 /* DSCameraHandler.swift */,
@@ -432,7 +429,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxKeyboard/RxKeyboard.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftCharts/SwiftCharts.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftChart/SwiftChart.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TTGSnackbar/TTGSnackbar.framework",
 			);
@@ -450,7 +447,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxKeyboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCharts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftChart.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGSnackbar.framework",
 			);
@@ -493,7 +490,6 @@
 				947231FF204D2E6000395424 /* BEMCheckBox.m in Sources */,
 				947231C8204D2D4D00395424 /* AppDelegate.swift in Sources */,
 				94907619204D7E16004CFD66 /* ScannerTableCell.swift in Sources */,
-				94A85C7A2092D304007F5355 /* ChartDefaults.swift in Sources */,
 				94F086AC2091BDBB00F541B7 /* TabViewController.swift in Sources */,
 				947231FD204D2E6000395424 /* BEMPathManager.m in Sources */,
 				9472320E204D2E9B00395424 /* ValidationHelper.swift in Sources */,

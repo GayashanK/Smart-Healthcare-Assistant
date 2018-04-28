@@ -13,9 +13,11 @@ import RxSwift
 
 final class ScannerViewController: UIViewController {
     
+    @IBOutlet weak var instructionView: UIView!
     @IBOutlet weak var tryAgainBarButton: UIBarButtonItem!
     @IBOutlet weak var closeBarButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var okButton: UIButton!
     
     /// The peripherals that have been discovered (no duplicates and sorted by asc RSSI)
     var peripherals: [(peripheral: CBPeripheral, RSSI: Float)] = []
@@ -30,6 +32,7 @@ final class ScannerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.isHidden = true
         
         // tryAgainButton is only enabled when we've stopped scanning
         tryAgainBarButton.isEnabled = false
@@ -42,9 +45,8 @@ final class ScannerViewController: UIViewController {
             return
         }
         
-        // start scanning and schedule the time out
-        serial.startScan()
-        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ScannerViewController.scanTimeOut), userInfo: nil, repeats: false)
+        okButton.rx.tap.subscribe({[weak self] _ in self?.hideInstruction()}).disposed(by: disposeBag)
+        okButton.layer.cornerRadius = 5
         
         let nibName = UINib(nibName: CellIdentifier.scannerTableCell.rawValue, bundle: nil)
         self.tableView.register(nibName, forCellReuseIdentifier: CellIdentifier.scannerTableCell.rawValue)
@@ -58,6 +60,15 @@ final class ScannerViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func hideInstruction() {
+        instructionView.isHidden = true
+        tableView.isHidden = false
+        // start scanning and schedule the time out
+        serial.startScan()
+        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ScannerViewController.scanTimeOut), userInfo: nil, repeats: false)
+        
     }
     
     /// Should be called 10s after we've begun scanning
@@ -200,7 +211,7 @@ extension ScannerViewController: BluetoothSerialDelegate {
             hud.hide(false)
         }
         
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadStartViewController"), object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: NotificationKey.reloadAfterConnect.rawValue), object: self)
         dismiss(animated: true, completion: nil)
     }
     
